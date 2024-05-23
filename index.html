@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+</style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="btns">
+        <div class="container">
+            <div class="btns_menu">
+                <button class="btn home">Home</button>
+                <button class="btn about">About</button>
+                <button class="btn skills">Skills</button>
+                <button class="btn works">Works</button>
+                <button class="btn contact">Contact</button>
+            </div>
+        </div>
+    </div>
+    <section id="home">
+        <div class="wrapper">
+            <h1>Home</h1>
+        </div>
+    </section>
+    <section id="about">
+        <div class="wrapper">
+            <h1>About</h1>
+            <h3>name Yun Min Park <br> age
+            23 <br> like Movie , Coffee <br> hate
+        Smoke <br> mbti INFJ</h3>
+                <img src="./imgs/dancing.gif" alt="dancing">
+        </div>
+        <section id="skills">
+            <div class="wrapper">
+                <h1>Skills</h1>
+                <img src="./imgs/일러스트레이터(illustrator)로고.png" alt="illustrator">
+                <img src="./imgs/포토샵(Photoshop)로고.png" alt="Photoshop">
+            </div>
+        </section>
+        <section id="works">
+            <div class="wrapper">
+                <h1>Works</h1>
+                <img src="./imgs/2301110157박윤민 우유 일러스트.jpg" alt="millk">
+                <img src="./imgs/새 표지.jpg" alt="magazine">
+                <img src="./imgs/태양 선.png" alt="sun">
+                <img src="./imgs/시안1.jpg" alt="poster">
+            </div>
+        </section>
+        <section id="contact">
+            <div class="wrapper">
+                <h1>Contact</h1>
+                <h3>Instagram <br> Never blog <br> X(twitter)</h3>
+            </div>
+        </section>
+        <section class="visual">
+            <div class="inner">
+                <div class="heart">
+                    <img src="./imgs/gradient-heart-studio.png" alt="">
+                </div>
+            </div>
+        </section>
+    </section>
+    <script>
+        const btnHome = document.querySelector('.home');
+        const sectionHome = document.querySelector('#home');
+        btnHome.addEventListener('click', function() {
+            sectionHome.scrollIntoView({behavior:"smooth", block:"center"});
+        })
+    </script>
+        <script>
+            const btnAbout = document.querySelector('.about');
+            const sectionAbout = document.querySelector('#about');
+            btnAbout.addEventListener('click', function() {
+                sectionAbout.scrollIntoView({behavior:"smooth", block:"center"});
+            })
+        </script>
+    <script>
+        const btnSkills = document.querySelector('.skills');
+        const sectionSkills = document.querySelector('#skills');
+        btnSkills.addEventListener('click', function() {
+            sectionSkills.scrollIntoView({behavior:"smooth", block:"center"});
+        })
+    </script>
+    <script>
+        const btnWorks = document.querySelector('.works');
+        const sectionWorks = document.querySelector('#works');
+        btnWorks.addEventListener('click', function() {
+            sectionWorks.scrollIntoView({behavior:"smooth", block:"center"});
+        })
+    </script>
+    <script>
+        const btnContact = document.querySelector('.contact');
+        const sectionContact = document.querySelector('#contact');
+        btnContact.addEventListener('click', function() {
+            sectionContact.scrollIntoView({behavior:"smooth", block:"center"});
+        })
+    </script>
+</body>
+</html>
