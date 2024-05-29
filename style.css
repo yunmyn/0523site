@@ -74,4 +74,6 @@ section .contact .h2 {
     text-align: center;
     margin-top: 70px;
 }
-  
+section .skills .img {
+    display: flex;
+}
