@@ -72,6 +72,14 @@ img {
     text-align: center;
     margin-top: 100px;
 }
-.skills .wrapper .imgs {
-    size: 40%;
+.about .wrapper .text {
+    margin-left: 800px;
 }
+.image-text-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .text-container {
+    margin-left: 40px; /* 이미지와 텍스트 사이의 간격 조절 */
+  }
