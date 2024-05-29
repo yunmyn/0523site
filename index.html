@@ -8,6 +8,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 </style>
     <link rel="stylesheet" href="style.css">
+    <style>
+        @keyframes slide-up {
+          0% {
+            transform: translateY(100%);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+      
+        .image-motion-up {
+          animation: slide-up 1s ease-in-out infinite alternate;
+        }
+      </style>
 </head>
 <body>
     <div class="btns">
@@ -26,14 +40,21 @@
             <h1>Home</h1>
         </div>
     </section>
+    <div class="image-container">
+        <img src="./imgs/gradient-heart-studio.png" alt="이미지" class="image-motion-up">
+      </div>
     <section id="about">
         <div class="wrapper">
             <h1>About</h1>
             <h3>name Yun Min Park <br> age
                 23 <br> like Movie , Coffee <br> hate
-        Smoke <br> mbti INFJ</h3>
-        <img src="./imgs/dancing.gif" alt="dancing">
-        </div>
+                Smoke <br> mbti INFJ</h3>
+                <img src="./imgs/dancing.gif" alt="dancing">
+            </div>
+        </section>
+        <div class="image-container">
+            <img src="./imgs/gradient-heart-studio.png" alt="이미지" class="image-motion-up">
+          </div>
         <section id="skills">
             <div class="wrapper">
                 <h1>Skills</h1>
@@ -43,6 +64,9 @@
                 <img src="./imgs/포토샵 실력.png" alt="psdskill">
             </div>
         </section>
+        <div class="image-container">
+            <img src="./imgs/gradient-heart-studio.png" alt="이미지" class="image-motion-up">
+          </div>
         <section id="works">
             <div class="wrapper">
                 <h1>Works</h1>
@@ -52,34 +76,36 @@
                 <img src="./imgs/시안1.jpg" alt="poster">
             </div>
         </section>
+        <div class="image-container">
+            <img src="./imgs/gradient-heart-studio.png" alt="이미지" class="image-motion-up">
+          </div>
         <section id="contact">
             <div class="wrapper">
                 <h1>Contact</h1>
                 <h2>Instagram <br> Never blog <br> X(twitter)</h2>
             </div>
         </section>
-    </section>
-    <script>
-        const btnHome = document.querySelector('.home');
-        const sectionHome = document.querySelector('#home');
-        btnHome.addEventListener('click', function() {
-            sectionHome.scrollIntoView({behavior:"smooth", block:"center"});
-        })
-        </script>
+        <script>
+            const btnHome = document.querySelector('.home');
+            const sectionHome = document.querySelector('#home');
+            btnHome.addEventListener('click', function() {
+                sectionHome.scrollIntoView({behavior:"smooth", block:"center"});
+            })
+            </script>
         <script>
             const btnAbout = document.querySelector('.about');
             const sectionAbout = document.querySelector('#about');
             btnAbout.addEventListener('click', function() {
                 sectionAbout.scrollIntoView({behavior:"smooth", block:"center"});
             })
-        </script>
+            </script>
     <script>
         const btnSkills = document.querySelector('.skills');
         const sectionSkills = document.querySelector('#skills');
         btnSkills.addEventListener('click', function() {
             sectionSkills.scrollIntoView({behavior:"smooth", block:"center"});
         })
-    </script>
+        </script>
     <script>
         const btnWorks = document.querySelector('.works');
         const sectionWorks = document.querySelector('#works');
