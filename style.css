@@ -5,6 +5,8 @@
 }
 body {
     background-image: url(./imgs/웹사이트.jpg);
+    background-size: cover;
+    background-position: center;
       font-family: "Playfair Display", serif;
       font-optical-sizing: auto;
       font-weight: weight;
@@ -83,3 +85,15 @@ img {
   .text-container {
     margin-left: 40px; /* 이미지와 텍스트 사이의 간격 조절 */
   }
+.contact-info {
+    margin-top: 100px;
+    font-size: 3em;
+}
+.contact-info, .social-link {
+    display: flex; /* 가로로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    flex-direction: column; /* 세로 정렬 */
+}
+.social-link a {
+    margin-left: 800px;
+}
