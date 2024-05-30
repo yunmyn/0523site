@@ -31,6 +31,13 @@ h3 {
     font-weight: 100;
     text-align: left;
 }
+#home {
+    height: 100vh; /* 화면 높이를 차지하도록 설정 */
+    display: flex; /* 수직 가운데 정렬을 위해 flex 사용 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+}
+
 .btns {
     position: fixed;
     width: 100%;
@@ -80,6 +87,8 @@ img {
 .image-text-container {
     display: flex;
     align-items: center;
+    color: rgb(12, 143, 82);
+    font: bold;
   }
   
   .text-container {
@@ -96,4 +105,16 @@ img {
 }
 .social-link a {
     margin-left: 800px;
+    margin-top: -120px;
+}
+.skills-logo {
+    width: 80px;
+    height: 80px;
+    align-items: center;
+}
+.skills-img {
+    flex-direction: column;
+    display: flex;
+    margin-left: 500px;
+    margin-top: -100px;
 }
