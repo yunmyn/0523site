@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 </style>
@@ -21,6 +22,29 @@
         .image-motion-up {
           animation: slide-up 1.7s ease-in-out infinite alternate;
         }
+        body {
+            margin: 0;
+        }
+        .back-to-position {
+            opacity: 0;
+            transition: 1s;
+        }
+        .back-to-position.to-right {
+            transform: translateX(-150px);
+        }
+        .back-to-position.to-left {
+            transform: translateX(150px);
+        }
+        .show .back-to-position {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .show .back-to-position.delay-0 {
+            transition-delay: 0s;
+        } 
+        .show .back-to-position.delay-1 {
+            transition-delay: 0.6s;
+        } 
       </style>
 </head>
 <body>
@@ -72,15 +96,18 @@
         <div class="image-container">
             <img src="./imgs/gradient-heart-studio.png" alt="이미지" class="image-motion-up">
           </div>
-        <section id="works">
-            <div class="wrapper">
-                <h1>Works</h1>
-                <img src="./imgs/이프온리 시안2.jpg" alt="ifonly">
-                <img src="./imgs/새 표지.jpg" alt="magazine">
-                <img src="./imgs/동물의 숲 캐릭터 사전.jpg" alt="animal">
-                <img src="./imgs/시안1.jpg" alt="poster">
+        <section class="section scroll-spy">
+            <div class="container">
+                    <div class="wrapper">
+                        <h1>Works</h1>
+                <div class="box back-to-position to-right">
+                    <img src="./imgs/이프온리 시안2.jpg" alt="ifonly">
+                    <img src="./imgs/새 표지.jpg" alt="magazine">
+                    <img src="./imgs/동물의 숲 캐릭터 사전.jpg" alt="animal">
+                    <img src="./imgs/시안1.jpg" alt="poster">
+                </div>
             </div>
-        </section>
+            </div></section>
         <div class="image-container">
             <img src="./imgs/gradient-heart-studio.png" alt="이미지" class="image-motion-up">
           </div>
@@ -118,10 +145,10 @@
         })
         </script>
     <script>
-        const btnWorks = document.querySelector('.works');
-        const sectionWorks = document.querySelector('#works');
+        const btnWorks = document.querySelector('section.scroll-spy');
+        const sectionSectionScrollspy = document.querySelector('#works');
         btnWorks.addEventListener('click', function() {
-            sectionWorks.scrollIntoView({behavior:"smooth", block:"center"});
+            sectionSectionScrollspy.scrollIntoView({behavior:"smooth", block:"center"});
         })
     </script>
     <script>
@@ -129,6 +156,20 @@
         const sectionContact = document.querySelector('#contact');
         btnContact.addEventListener('click', function() {
             sectionContact.scrollIntoView({behavior:"smooth", block:"center"});
+        })
+    </script>
+    <script>
+        const spyEls = document.querySelectorAll('section.scroll-spy');
+        const controller = new ScrollMagic.Controller();
+
+        spyEls.forEach(function(spyEl) {
+            new ScrollMagic
+            .Scene({
+                triggerElement: spyEl
+            })
+            .setClassToggle(spyEl, 'show')
+            .addTo(controller);
+
         })
     </script>
 </body>
