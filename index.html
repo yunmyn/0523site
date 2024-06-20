@@ -4,48 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- ScrollMagic CDN 추가 -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <!-- Google Fonts 추가 -->
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-</style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
+    <!-- 외부 CSS 파일 추가 -->
     <link rel="stylesheet" href="style.css">
+    <!-- 내부 CSS 스타일 추가 -->
     <style>
         @keyframes slide-up {
-          0% {
-            transform: translateY(100%);
-          }
-          100% {
-            transform: translateY(0);
-          }
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
       
         .image-motion-up {
-          animation: slide-up 1.7s ease-in-out infinite alternate;
+            animation: slide-up 1.7s ease-in-out infinite alternate;
         }
+      
         body {
             margin: 0;
         }
+      
         .back-to-position {
             opacity: 0;
-            transition: 1s;
+            transition: opacity 1s, transform 1s;
         }
+      
         .back-to-position.to-right {
             transform: translateX(-150px);
         }
+      
         .back-to-position.to-left {
             transform: translateX(150px);
         }
+      
         .show .back-to-position {
             opacity: 1;
             transform: translateX(0);
         }
+      
         .show .back-to-position.delay-0 {
             transition-delay: 0s;
-        } 
+        }
+      
         .show .back-to-position.delay-1 {
             transition-delay: 0.6s;
-        } 
-      </style>
+        }
+    </style>
 </head>
 <body>
     <div class="btns">
@@ -59,47 +70,40 @@
             </div>
         </div>
     </div>
+
+    <!-- 각 섹션 추가 -->
     <section id="home">
         <div class="wrapper">
             <h1>Home</h1>
         </div>
     </section>
-    <div class="image-container">
-        <img src="./imgs/gradient-heart-studio.png" alt="이미지" class="image-motion-up">
-      </div>
+
     <section id="about">
         <div class="wrapper">
             <h1>About</h1>
             <div class="image-text-container">
                 <img src="./imgs/dancing.gif" alt="이미지" class="image">
                 <div class="text-container">
-                  <p><h3>Yun Min Park <br>
-                    23 <br> Movie , Coffee lover <br> INFJ</h3></p>
+                    <h3>Yun Min Park</h3>
+                    <p>23<br>Movie, Coffee lover<br>INFJ</p>
                 </div>
-              </div>
-        </section>
-        <div class="image-container">
-            <img src="./imgs/gradient-heart-studio.png" alt="이미지" class="image-motion-up">
-          </div>
-        <section id="skills">
-            <div class="wrapper">
-                <h1>Skills</h1>
-                <div class="skills-logo">
-                    <img src="./imgs/일러스트레이터 로고1.png" alt="illustrator">
-                    <img src="./imgs/포토샵 로고1.png" alt="Photoshop">
-                </div>
-                <div class="skills-img">
-                    <img src="./imgs/일러스트 실력.png" alt="aiskill">
-                    <img src="./imgs/포토샵 실력.png" alt="psdskill"></div>
             </div>
-        </section>
-        <div class="image-container">
-            <img src="./imgs/gradient-heart-studio.png" alt="이미지" class="image-motion-up">
-          </div>
-        <section class="section scroll-spy">
-            <div class="container">
-                    <div class="wrapper">
-                        <h1>Works</h1>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="wrapper">
+            <h1>Skills</h1>
+            <div class="skills-img">
+                <img src="./imgs/실력 이미지.png" alt="illustrator">
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="section scroll-spy">
+        <div class="container">
+            <div class="wrapper">
+                <h1>Works</h1>
                 <div class="box back-to-position to-right">
                     <img src="./imgs/이프온리 시안2.jpg" alt="ifonly">
                     <img src="./imgs/새 표지.jpg" alt="magazine">
@@ -107,70 +111,78 @@
                     <img src="./imgs/시안1.jpg" alt="poster">
                 </div>
             </div>
-            </div></section>
-        <div class="image-container">
-            <img src="./imgs/gradient-heart-studio.png" alt="이미지" class="image-motion-up">
-          </div>
-        <section id="contact">
-            <div class="wrapper">
-                <h1>Contact</h1>
-                <div class="contact-info">
-                    <p>Instagram</p>
-                    <p>Never blog</p></div>
-                </div>
-                <div class="social-link">
-                    <a href="#" id="instagramLink">https://www.instagram.com/dbs_myn?igsh=OWcxcHoyMHkyZ2Nz</a>
-                    <a href="#" id="blogLink">https://m.blog.naver.com/parkyunmin35</a>
-                </div>
-        </section>
-        <script>
-            const btnHome = document.querySelector('.home');
-            const sectionHome = document.querySelector('#home');
-            btnHome.addEventListener('click', function() {
-                sectionHome.scrollIntoView({behavior:"smooth", block:"center"});
-            })
-            </script>
-        <script>
-            const btnAbout = document.querySelector('.about');
-            const sectionAbout = document.querySelector('#about');
-            btnAbout.addEventListener('click', function() {
-                sectionAbout.scrollIntoView({behavior:"smooth", block:"center"});
-            })
-            </script>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="wrapper">
+            <h1>Contact</h1>
+            <div class="contact-info">
+                <p>Instagram</p>
+                <p>Never blog</p>
+            </div>
+            <div class="social-link">
+                <a href="#" id="instagramLink">https://www.instagram.com/dbs_myn?igsh=OWcxcHoyMHkyZ2Nz</a>
+                <a href="#" id="blogLink">https://m.blog.naver.com/parkyunmin35</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 각 버튼별 스크롤 이벤트 설정 -->
+    <script>
+        const btnHome = document.querySelector('.home');
+        const sectionHome = document.querySelector('#home');
+        btnHome.addEventListener('click', function() {
+            sectionHome.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+    </script>
+
+    <script>
+        const btnAbout = document.querySelector('.about');
+        const sectionAbout = document.querySelector('#about');
+        btnAbout.addEventListener('click', function() {
+            sectionAbout.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+    </script>
+
     <script>
         const btnSkills = document.querySelector('.skills');
         const sectionSkills = document.querySelector('#skills');
         btnSkills.addEventListener('click', function() {
-            sectionSkills.scrollIntoView({behavior:"smooth", block:"center"});
-        })
-        </script>
-    <script>
-        const btnWorks = document.querySelector('section.scroll-spy');
-        const sectionSectionScrollspy = document.querySelector('#works');
-        btnWorks.addEventListener('click', function() {
-            sectionSectionScrollspy.scrollIntoView({behavior:"smooth", block:"center"});
-        })
+            sectionSkills.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
     </script>
+
+    <script>
+        const btnWorks = document.querySelector('.works');
+        const sectionWorks = document.querySelector('#works');
+        btnWorks.addEventListener('click', function() {
+            sectionWorks.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+    </script>
+
     <script>
         const btnContact = document.querySelector('.contact');
         const sectionContact = document.querySelector('#contact');
         btnContact.addEventListener('click', function() {
-            sectionContact.scrollIntoView({behavior:"smooth", block:"center"});
-        })
+            sectionContact.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
     </script>
+
+    <!-- ScrollMagic 설정 -->
     <script>
-        const spyEls = document.querySelectorAll('section.scroll-spy');
+        const spyEls = document.querySelectorAll('.scroll-spy');
         const controller = new ScrollMagic.Controller();
 
         spyEls.forEach(function(spyEl) {
-            new ScrollMagic
-            .Scene({
-                triggerElement: spyEl
+            new ScrollMagic.Scene({
+                triggerElement: spyEl,
+                triggerHook: 0.8 // 스크롤 시점 조정
             })
             .setClassToggle(spyEl, 'show')
             .addTo(controller);
-
-        })
+        });
     </script>
 </body>
 </html>
+
