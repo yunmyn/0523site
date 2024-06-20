@@ -27,11 +27,6 @@
         .image-motion-up {
             animation: slide-up 1.7s ease-in-out infinite alternate;
         }
-      
-        body {
-            margin: 0;
-        }
-      
         .back-to-position {
             opacity: 0;
             transition: opacity 1s, transform 1s;
@@ -57,160 +52,226 @@
         .show .back-to-position.delay-1 {
             transition-delay: 0.6s;
         }
+        body {
+            margin: 0;
+        }
+        #home h1 {
+            opacity: 0; /* 초기에 숨깁니다. */
+            animation: fade-in 1.5s forwards; /* fade-in 애니메이션 적용 */
+        }
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .typewriter {
+            display: inline-block;
+            overflow: hidden; /* 넘치는 부분 숨기기 */
+            border-right: .12em solid rgb(255, 255, 255); /* 커서 효과 */
+            white-space: nowrap; /* 텍스트 줄바꿈 없음 */
+            animation: typing 4s steps(15, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: rgb(255, 255, 255) }
+        }
+
+        /* 추가된 스타일: 네비게이션 버튼 중앙 정렬 */
+        .btns {
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            margin-top: 20px; /* 버튼 위 여백 설정 */
+        }
+
+        .btns_menu {
+            display: flex;
+            gap: 20px; /* 버튼 사이 간격 */
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Playfair Display', serif; /* 폰트 적용 */
+            transition: background-color 0.3s ease;
+        }
     </style>
 </head>
 <body>
-    <div class="btns">
-        <div class="container">
-            <div class="btns_menu">
-                <button class="btn home">Home</button>
-                <button class="btn about">About</button>
-                <button class="btn skills">Skills</button>
-                <button class="btn works">Works</button>
-                <button class="btn contact">Contact</button>
+
+<div class="btns">
+    <div class="container">
+        <div class="btns_menu">
+            <button class="btn home">Home</button>
+            <button class="btn about">About</button>
+            <button class="btn skills">Skills</button>
+            <button class="btn works">Works</button>
+            <button class="btn contact">Contact</button>
+        </div>
+    </div>
+</div>
+
+<!-- 각 섹션 추가 -->
+<section id="home">
+    <div class="wrapper">
+        <h1><span class="typewriter">WELCOME</span></h1>
+    </div>
+</section>
+
+<section id="about">
+    <div class="wrapper">
+        <h1>About</h1>
+        <div class="image-text-container">
+            <img src="./imgs/dancing.gif" alt="이미지" class="image">
+            <div class="text-container">
+                <h3>Yun Min Park</h3>
+                <p>23<br>Movie, Coffee lover<br>INFJ</p>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- 각 섹션 추가 -->
-    <section id="home">
-        <div class="wrapper">
-            <h1>Home</h1>
+<section id="skills">
+    <div class="wrapper">
+        <h1>Skills</h1>
+        <div class="skills-img">
+            <img src="./imgs/실력 이미지.png" alt="illustrator">
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="about">
+<section id="works" class="section scroll-spy">
+    <div class="container">
         <div class="wrapper">
-            <h1>About</h1>
-            <div class="image-text-container">
-                <img src="./imgs/dancing.gif" alt="이미지" class="image">
-                <div class="text-container">
-                    <h3>Yun Min Park</h3>
-                    <p>23<br>Movie, Coffee lover<br>INFJ</p>
-                </div>
+            <h1>Works</h1>
+            <div class="box back-to-position to-right">
+                <img src="./imgs/이프온리 시안2.jpg" alt="ifonly">
+                <img src="./imgs/새 표지.jpg" alt="magazine">
+                <img src="./imgs/동물의 숲 캐릭터 사전.jpg" alt="animal">
+                <img src="./imgs/시안1.jpg" alt="poster">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="skills">
-        <div class="wrapper">
-            <h1>Skills</h1>
-            <div class="skills-img">
-                <img src="./imgs/실력 이미지.png" alt="illustrator">
-            </div>
+<section id="contact">
+    <div class="wrapper">
+        <h1>Contact</h1>
+        <div class="contact-info">
+            <p><a href="https://www.instagram.com/dbs_myn?igsh=OWcxcHoyMHkyZ2Nz" target="_blank">Instagram</a></p>
+            <p><a href="https://m.blog.naver.com/parkyunmin35" target="_blank">Never blog</a></p>
         </div>
-    </section>
+    </div>
+</section>
+<button class="arrow-up">
+    <span class="material-symbols-outlined">
+        favorite
+        </span>
+</button>
 
-    <section id="works" class="section scroll-spy">
-        <div class="container">
-            <div class="wrapper">
-                <h1>Works</h1>
-                <div class="box back-to-position to-right">
-                    <img src="./imgs/이프온리 시안2.jpg" alt="ifonly">
-                    <img src="./imgs/새 표지.jpg" alt="magazine">
-                    <img src="./imgs/동물의 숲 캐릭터 사전.jpg" alt="animal">
-                    <img src="./imgs/시안1.jpg" alt="poster">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="contact">
-        <div class="wrapper">
-            <h1>Contact</h1>
-            <div class="contact-info">
-                <p><a href="https://www.instagram.com/dbs_myn?igsh=OWcxcHoyMHkyZ2Nz" target="_blank">Instagram</a></p>
-                <p><a href="https://m.blog.naver.com/parkyunmin35" target="_blank">Never blog</a></p>
-            </div>
-        </div>
-    </section>
-    <button class="arrow-up">
-        <span class="material-symbols-outlined">
-            favorite
-            </span>
-    </button>
-    
-    
 
-    <!-- 각 버튼별 스크롤 이벤트 설정 -->
-    <script>
-        const btnHome = document.querySelector('.home');
-        const sectionHome = document.querySelector('#home');
-        btnHome.addEventListener('click', function() {
-            sectionHome.scrollIntoView({ behavior: "smooth", block: "center" });
+<!-- 각 버튼별 스크롤 이벤트 설정 -->
+<script>
+    const btnHome = document.querySelector('.home');
+    const sectionHome = document.querySelector('#home');
+    btnHome.addEventListener('click', function() {
+        sectionHome.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+</script>
+
+<script>
+    const btnAbout = document.querySelector('.about');
+    const sectionAbout = document.querySelector('#about');
+    btnAbout.addEventListener('click', function() {
+        sectionAbout.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+</script>
+
+<script>
+    const btnSkills = document.querySelector('.skills');
+    const sectionSkills = document.querySelector('#skills');
+    btnSkills.addEventListener('click', function() {
+        sectionSkills.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+</script>
+
+<script>
+    const btnWorks = document.querySelector('.works');
+    const sectionWorks = document.querySelector('#works');
+    btnWorks.addEventListener('click', function() {
+        sectionWorks.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+</script>
+
+<script>
+    const btnContact = document.querySelector('.contact');
+    const sectionContact = document.querySelector('#contact');
+    btnContact.addEventListener('click', function() {
+        sectionContact.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+</script>
+
+<!-- ScrollMagic 설정 -->
+<script>
+    const spyEls = document.querySelectorAll('.scroll-spy');
+    const controller = new ScrollMagic.Controller();
+
+    spyEls.forEach(function(spyEl) {
+        new ScrollMagic.Scene({
+            triggerElement: spyEl,
+            triggerHook: 0.8 // 스크롤 시점 조정
+        })
+        .setClassToggle(spyEl, 'show')
+        .addTo(controller);
+    });
+</script>
+
+<script>
+            const arrowUp = document.querySelector('.arrow-up');
+        document.addEventListener('scroll', function() {console.log(window.scrollY);
+            if (window.scrollY > 300) {
+                arrowUp.classList.add('show');}
+               else {
+            arrowUp.classList.remove('show');
+        }
+        })
+        arrowUp.addEventListener('click', function() {
+            sectionHome.scrollIntoView({behavior:"smooth",
+            block:"center"});
         });
-    </script>
 
-    <script>
-        const btnAbout = document.querySelector('.about');
-        const sectionAbout = document.querySelector('#about');
-        btnAbout.addEventListener('click', function() {
-            sectionAbout.scrollIntoView({ behavior: "smooth", block: "center" });
-        });
-    </script>
+        const containerBgcolor = document.querySelector('.container_bgcolor');
+        window.addEventListener('scroll', function() {console.log(window.scrollY);
+            if (window.scrollY > 300) {
+                containerBgcolor.style.opacity = '1';}
+               else {
+            containerBgcolor.style.opacity = '0';
+        }
+        })
+</script>
 
-    <script>
-        const btnSkills = document.querySelector('.skills');
-        const sectionSkills = document.querySelector('#skills');
-        btnSkills.addEventListener('click', function() {
-            sectionSkills.scrollIntoView({ behavior: "smooth", block: "center" });
-        });
-    </script>
+<script>
+// 페이지 로딩 후 초기화 함수
+document.addEventListener('DOMContentLoaded', function() {
+    const typewriter = document.querySelector('.typewriter');
 
-    <script>
-        const btnWorks = document.querySelector('.works');
-        const sectionWorks = document.querySelector('#works');
-        btnWorks.addEventListener('click', function() {
-            sectionWorks.scrollIntoView({ behavior: "smooth", block: "center" });
-        });
-    </script>
-
-    <script>
-        const btnContact = document.querySelector('.contact');
-        const sectionContact = document.querySelector('#contact');
-        btnContact.addEventListener('click', function() {
-            sectionContact.scrollIntoView({ behavior: "smooth", block: "center" });
-        });
-    </script>
-
-    <!-- ScrollMagic 설정 -->
-    <script>
-        const spyEls = document.querySelectorAll('.scroll-spy');
-        const controller = new ScrollMagic.Controller();
-
-        spyEls.forEach(function(spyEl) {
-            new ScrollMagic.Scene({
-                triggerElement: spyEl,
-                triggerHook: 0.8 // 스크롤 시점 조정
-            })
-            .setClassToggle(spyEl, 'show')
-            .addTo(controller);
-        });
-    </script>
-
-    <script>
-                const arrowUp = document.querySelector('.arrow-up');
-            document.addEventListener('scroll', function() {console.log(window.scrollY);
-                if (window.scrollY > 300) {
-                    arrowUp.classList.add('show');}
-                   else {
-                arrowUp.classList.remove('show');
-            }
-            })
-            arrowUp.addEventListener('click', function() {
-                sectionHome.scrollIntoView({behavior:"smooth",
-                block:"center"});
-            });
-
-            const containerBgcolor = document.querySelector('.container_bgcolor');
-            window.addEventListener('scroll', function() {console.log(window.scrollY);
-                if (window.scrollY > 300) {
-                    containerBgcolor.style.opacity = '1';}
-                   else {
-                containerBgcolor.style.opacity = '0';
-            }
-            })
-    </script>
+    // 텍스트가 완전히 작성된 후 HOME으로 변경
+    typewriter.addEventListener('animationend', function() {
+        typewriter.textContent = 'HOME';
+        typewriter.style.borderRight = 'none'; // 커서 효과 제거
+    });
+});
+</script>
 </body>
 </html>
+
 
