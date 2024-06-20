@@ -30,13 +30,37 @@ h3 {
     font-size: 24px;
     font-weight: 100;
     text-align: left;
+    margin-top: 20px; /* 텍스트 위쪽 간격 추가 */
 }
+
 #home {
     height: 100vh; /* 화면 높이를 차지하도록 설정 */
     display: flex; /* 수직 가운데 정렬을 위해 flex 사용 */
     justify-content: center; /* 수평 가운데 정렬 */
     align-items: center; /* 수직 가운데 정렬 */
+    font-size: large;
 }
+#home h1 {
+    font-size: 200px; /* 텍스트 크기를 원하는 크기로 조정 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 추가 */
+}
+#about h1 {
+    font-size: 40px; /* About 섹션의 제목인 "About"의 텍스트 크기 */
+    text-align: center; /* 제목 텍스트 가운데 정렬 */
+}
+
+#about h3 {
+    font-size: 40px; /* 이름 및 세부 정보의 텍스트 크기 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    margin-top: 20px; /* 텍스트 위쪽 마진 추가 */
+}
+
+#about p {
+    font-size: 40px; /* 세부 정보의 텍스트 크기 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    line-height: 1.5; /* 줄 간격 설정 */
+}
+
 
 .btns {
     position: fixed;
@@ -54,16 +78,32 @@ h3 {
     justify-content: center;
 }
 .btns_menu .btn {
-    font-size: 16px;
+    font-size: 18px; /* 텍스트 크기를 18px로 늘림 */
     font-weight: 600;
-    color: gray;
+    color: rgb(144, 16, 184);
     width: 150px;
     height: 40px;
     margin: 4px;
     cursor: pointer;
+    position: relative; /* 상대 위치 지정 */
+    overflow: hidden; /* 내부 요소 오버플로우 처리 */
+}
+
+.btns_menu .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(207, 255, 221, 0.5);
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px); /* 블러 효과 추가 */
+    z-index: -1; /* 배경이미지 제한 */
 }
 .btns_menu .btn:hover {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 button {
     background-color: transparent;
@@ -87,9 +127,10 @@ img {
 .image-text-container {
     display: flex;
     align-items: center;
-    color: rgb(12, 143, 82);
-    font: bold;
-  }
+    color: rgb(12, 143, 82); /* 폰트 가늘게 */
+    margin-top:  20px; 
+font-weight:  Adjust Redes possess even Mo also
+}
   
   .text-container {
     margin-left: 40px; /* 이미지와 텍스트 사이의 간격 조절 */
@@ -107,14 +148,6 @@ img {
     margin-left: 800px;
     margin-top: -120px;
 }
-.skills-logo {
-    width: 80px;
-    height: 80px;
-    align-items: center;
-}
-.skills-img {
-    flex-direction: column;
-    display: flex;
-    margin-left: 500px;
-    margin-top: -100px;
+#skills {
+    size: 400px;
 }
